@@ -31,6 +31,7 @@ const UserProfile = () => {
   });
   const auth = getAuth();
   const user = auth.currentUser;
+  console.log("UserProfile ~ user:", user);
 
   const imageUrl = getValues("avatar");
 

@@ -190,6 +190,11 @@ const Header = () => {
       }
     });
   };
+  function getName (name){
+      const length = name.split(" ").length
+      return name.split(" ")[length-1]
+  }
+
   return (
     <HeaderStyles show={show} ref={nodeRef}>
       <div className="container dark:text-white dark:fill-white">
@@ -268,7 +273,7 @@ const Header = () => {
                     />
                   </Link>
                   <p className="ml-2 text-sm font-semibold">
-                    {userInfo?.fullname}
+                    {getName(userInfo?.displayName)}
                   </p>
                   <button
                     className="ml-2 inline-block font-semibold px-3 py-2 rounded-lg bg-green-500"
