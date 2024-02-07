@@ -27,7 +27,7 @@ const ImageUpload = (props) => {
       {!image && progress === 0 && (
         <div className="flex flex-col items-center text-center pointer-events-none">
           <img
-            src="/img-upload.png"
+            src="/upload.png"
             alt="upload-img"
             className="max-w-[80px] mb-5"
           />

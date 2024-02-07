@@ -38,13 +38,12 @@ const InputStyles = styled.div`
  * @param {*} control - control from react hook form
  * @returns Input
  */
-const Input = ({ name = "", type = "text", children, control, defaultValue, ...props }) => {
+const Input = ({ name = "", type = "text", children, control, ...props }) => {
   const { field } = useController({
     control,
     name,
-    defaultValue: defaultValue || "", // Sử dụng defaultValue từ prop hoặc mặc định là chuỗi trống
+    defaultValue: "",
   });
-
   return (
     <InputStyles hasIcon={children ? true : false}>
       <input id={name} type={type} {...field} {...props} />
@@ -52,13 +51,11 @@ const Input = ({ name = "", type = "text", children, control, defaultValue, ...p
     </InputStyles>
   );
 };
-
 Input.propTypes = {
+  // value: PropTypes.string
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
   children: PropTypes.any,
   control: PropTypes.any.isRequired,
-  defaultValue: PropTypes.string, // Thêm prop defaultValue
 };
-
 export default Input;

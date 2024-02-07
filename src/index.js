@@ -13,6 +13,7 @@ import { AuthProvider } from "contexts/auth-context";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./utils/constants";
 import SignInPage from "pages/SignInPage";
+import DocumentPage from "pages/DocumentPage";
 import SignUpPage from "pages/SignUpPage";
 import DashboardLayout from "module/dashboard/DashboardLayout";
 import PageNotFound from "pages/PageNotFound";
@@ -29,7 +30,9 @@ import CreateChapter from "module/chapter/CreateChapter";
 import ChapterCourseTable from "module/chapter/ChapterCourseTable";
 import LessonCourseDetail from "module/post/ListDetailLesson";
 import ListChapter from "module/chapter/ListChapter";
-
+import UserProfile from "module/profile/Profile";
+import UserUpdate from "module/user/UserUpdate";
+import DonatePage from "pages/DonatePage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
@@ -50,11 +53,15 @@ const router = createBrowserRouter([
     element: <ListChapter></ListChapter>,
   },
   {
+    path: "/document",
+    element: <DocumentPage></DocumentPage>,
+  },
+  {
     path: "/course/:slug/:slug",
     element: <CourseDetail></CourseDetail>,
   },
   {
-    path:"/manage",
+    path: "/manage",
     element: <DashboardLayout></DashboardLayout>,
     children: [
       {
@@ -71,7 +78,7 @@ const router = createBrowserRouter([
       },
       {
         path: "update-course",
-        element:<CourseUpdate></CourseUpdate>
+        element: <CourseUpdate></CourseUpdate>,
       },
       {
         path: "table-lesson",
@@ -79,11 +86,11 @@ const router = createBrowserRouter([
       },
       {
         path: "lesson/detail/:slug",
-        element:<LessonCourseDetail></LessonCourseDetail>
+        element: <LessonCourseDetail></LessonCourseDetail>,
       },
       {
-        path:"chapter-table",
-        element:<ChapterCourseTable></ChapterCourseTable>
+        path: "chapter-table",
+        element: <ChapterCourseTable></ChapterCourseTable>,
       },
       {
         path: "chapter-manage",
@@ -100,18 +107,25 @@ const router = createBrowserRouter([
       {
         path: "lesson/create/:slug",
         element: <CreateLesson></CreateLesson>,
-      }
-     
-      
-    ]
+      },
+    ],
   },
- 
- 
+  {
+    path: "/profile",
+    element: <UserProfile></UserProfile>,
+  },
+  {
+    path: "/donate",
+    element: <DonatePage></DonatePage>,
+  },
+  {
+    path:"/user",
+    element: <UserUpdate></UserUpdate>,
+  },
   {
     path: "/*",
     element: <PageNotFound></PageNotFound>,
-  }
-
+  },
 ]);
 root.render(
   <AuthProvider>
