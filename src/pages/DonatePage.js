@@ -12,7 +12,7 @@ const DonatePage = () => {
     {
       stk: "1035772738",
       nameBank: "Vietcombank",
-      qr: "https://firebasestorage.googleapis.com/v0/b/react-monkey-bogging.appspot.com/o/qr.jpg?alt=media&token=7c3d2216-e469-42ab-8bcd-05c3f89f01a7",
+      qr: "https://firebasestorage.googleapis.com/v0/b/hvh-e-learning.appspot.com/o/qr.jpg?alt=media&token=33628ff7-bb99-4591-8b79-ab401e97b391",
     },
     {
       stk: "0335010817",
